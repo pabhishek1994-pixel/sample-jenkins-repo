@@ -9,5 +9,21 @@ pipeline{
                 '''
             }
         }
+        stage("print-cred") {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'git'
+                        usernameVariable: 'MY-USER'
+                        passwordVariable: 'MY-PASSWORD'
+                    )
+                ]){
+                    sh '''
+                        echo "my user name is ${MY-USER}"
+                        echo " my password is ${MY-PASSWORD}"
+                    '''
+                }
+            }
+        }
     }
 }
