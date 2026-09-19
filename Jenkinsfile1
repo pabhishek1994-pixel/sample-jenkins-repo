@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage(check-out-main) {
+        stage("check-out-main") {
             when {
                 branch 'main'
             }
