@@ -6,9 +6,11 @@ pipeline {
                 branch 'main'
             }
             steps {
-                echo "This is MAIN branch"
-                echo "pwd"
-                echo "ls -ltr"
+                sh ''' 
+                    echo "This is MAIN branch"
+                    pwd
+                    ls -ltr
+                '''
             }
         }
     }
