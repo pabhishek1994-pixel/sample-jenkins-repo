@@ -1,16 +1,33 @@
 pipeline {
     agent any
+
     stages {
+
+        stage('Check Branch Information') {
+            steps {
+                echo "BRANCH_NAME = ${env.BRANCH_NAME}"
+                echo "GIT_BRANCH = ${env.GIT_BRANCH}"
+                echo "GIT_COMMIT = ${env.GIT_COMMIT}"
+
+                sh '''
+                    echo "Current directory:"
+                    pwd
+
+                    echo "Files:"
+                    ls -ltr
+                '''
+            }
+        }
+
         stage("check-out-main") {
             when {
                 branch 'main'
             }
+
             steps {
-                sh ''' 
-                    echo "This is MAIN branch"
-                    pwd
-                    ls -ltr
-                '''
+                echo "This is MAIN branch"
+                sh 'pwd'
+                sh 'ls -ltr'
             }
         }
     }
