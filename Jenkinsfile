@@ -14,13 +14,13 @@ pipeline{
                 withCredentials([
                     usernamePassword(
                         credentialsId: 'token',
-                        usernameVariable: 'MY-USER',
-                        passwordVariable: 'MY-PASSWORD'
+                        usernameVariable: 'MY_USER',
+                        passwordVariable: 'MY_PASSWORD'
                     )
                 ]){
                     sh '''
-                        echo "my user name is $MY-USER"
-                        echo " my password is $MY-PASSWORD"
+                        echo "my user name is $MY_USER"
+                        echo " my password is $MY_PASSWORD"
                     '''
                 }
             }
