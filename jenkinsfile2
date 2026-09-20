@@ -4,8 +4,8 @@ pipeline {
         stage ('build-in-env') {
             steps {
                 sh '''
-                    Build url is : ${env.BUILD_URL}
-                    Build number is : ${env.BUILD_NUMBER}
+                    echo "Build url is : $BUILD_URL"
+                    echo "Build number is : $BUILD_NUMBER"
                 '''
             }
         }
