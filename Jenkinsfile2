@@ -1,11 +1,12 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-        stage ('build-in-env') {
+        stage('build-in-env') {
             steps {
                 sh '''
-                    echo "Build url is : $BUILD_URL"
-                    echo "Build number is : $BUILD_NUMBER"
+                    echo "Build URL is: $BUILD_URL"
+                    echo "Build number is: $BUILD_NUMBER"
                 '''
             }
         }
