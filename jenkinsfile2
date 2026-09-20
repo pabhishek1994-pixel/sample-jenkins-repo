@@ -1,0 +1,13 @@
+pipeline {
+    agent any 
+    stages {
+        stage ('build-in-env') {
+            steps {
+                sh '''
+                    Build url is : ${env.BUILD_URL}
+                    Build number is : ${env.BUILD_NUMBER}
+                '''
+            }
+        }
+    }
+}
