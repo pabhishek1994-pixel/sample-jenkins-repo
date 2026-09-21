@@ -7,6 +7,11 @@ pipeline {
                 sh '''
                     echo "Build URL is: $BUILD_URL"
                     echo "Build number is: $BUILD_NUMBER"
+                    echo "Job name is : $JOB_NAME"
+                    echo "Job base name is : $JOB_BASE_NAME"
+                    echo "Workspace is : $WORKSPACE"
+                    echo "Jenkins URL is : $JENKINS_URL"
+                    echo "Build tag is : $BUILD_TAG"
                 '''
             }
         }
