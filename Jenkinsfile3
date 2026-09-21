@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    triggers {
+        upstream(
+            upstreamProjects: 'jen-env',
+            threshold: hudson.model.Result.SUCCESS
+        )
+    }
+
+    stages {
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+            }
+        }
+    }
+}
